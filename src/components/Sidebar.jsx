@@ -5,6 +5,9 @@ import { SidebarData } from "../data/Data"
 import { UilSignOutAlt } from "@iconscout/react-unicons";
 
 export default function Sidebar() {
+
+    const [selected, setSelected] = useState(0);
+    
     return (
         <>
         <div className="sidebar">
@@ -16,11 +19,10 @@ export default function Sidebar() {
             </section>
             <section className="menu">
                 {SidebarData.map((item, index) => {
-
-                    const [selected, setSelected] = useState(0)
-
                     return (
-                        <div className={selected===index?"menu--item active":"menu--item"} key={index}>
+                        <div className={selected === index ? "menu--item active":"menu--item"} 
+                        key={index}
+                        onClick={()=>setSelected(index)}>
                             <item.icon/>
                             <span>
                                 {item.heading}
@@ -28,8 +30,9 @@ export default function Sidebar() {
                         </div>
                     )
                 })}
+                
                 <div className="menu--item">
-                    <UilSignOutAlt/>
+                    <UilSignOutAlt/> {/* sign out icon */}
                 </div>
             </section>
         </div>
