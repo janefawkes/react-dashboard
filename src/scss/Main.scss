@@ -1,2 +1,8 @@
 @use "variables" as *;
 @use "base";
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

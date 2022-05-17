@@ -3,6 +3,8 @@ import "../scss/Main.scss"
 
 export default function Main() {
     return (
-    <h1></h1>
+    <div className="main">
+        <h1>Dashboard</h1>
+    </div>
     )
 }
